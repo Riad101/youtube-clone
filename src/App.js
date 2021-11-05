@@ -2,12 +2,15 @@ import React from "react";
 
 import {Grid} from '@material-ui/core';
 import youtube from "./api/youtube";
-import {SearchBar, VideoDetail, VideoList} from './components'
+import {SearchBar, VideoDetail} from './components'
 
 class App extends React.Component{
 
     handleSubmit = async (searchTerm) => {
-        const res = await youtube.get('search', { params: {q: searchTerm}        
+        const res = await youtube.get('/search', {  params: {
+          
+            q: searchTerm
+        }       
     });
         console.log(res);
     }
